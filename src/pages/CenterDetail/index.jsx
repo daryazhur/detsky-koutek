@@ -18,13 +18,42 @@ export const CenterDetail = () => {
 
     return (
         <div>
-            <h2>{center.name}</h2>
-            <p><strong>Adresa: </strong>{center.address}</p>
-            <p><strong>Kapacita: </strong>{center.capacity} osob</p>
+            <h2>{center.data.name}</h2>
+            <p><strong>Adresa: </strong>{center.data.address}</p>
+            <p><strong>Kapacita: </strong>{center.data.capacity} osob</p>
             <h3>Otevírací hodiny:</h3>
-            <p>{center.open}</p>
+            <table>
+                <tr>
+                    <td>Pondělí: </td>
+                    <td>{center.data.open.mon}</td>
+                </tr>
+                <tr>
+                    <td>Úterý: </td>
+                    <td>{center.data.open.tue}</td>
+                </tr>
+                <tr>
+                    <td>Středa: </td>
+                    <td>{center.data.open.wed}</td>
+                </tr>
+                <tr>
+                    <td>Čtvrtek: </td>
+                    <td>{center.data.open.thu}</td>
+                </tr>
+                <tr>
+                    <td>Pátek: </td>
+                    <td>{center.data.open.fri}</td>
+                </tr>
+                <tr>
+                    <td>Sobota: </td>
+                    <td>{center.data.open.sat || "Zavřeno"}</td>
+                </tr>
+                <tr>
+                    <td>Neděle: </td>
+                    <td>{center.data.open.sun || "Zavřeno"}</td>
+                </tr>
+            </table>
             
-            <p><strong>Info: </strong>{center.info}</p>
+            <p><strong>Info: </strong>{center.data.info}</p>
         </div>
     );
 };
